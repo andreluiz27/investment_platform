@@ -22,6 +22,13 @@ Base = declarative_base()
 
 
 async def get_db():
+    """
+    Returns a database session.
+
+    Yields:
+        SessionLocal: The database session.
+
+    """
     db = SessionLocal()
     try:
         yield db

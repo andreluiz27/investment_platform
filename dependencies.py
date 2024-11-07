@@ -16,6 +16,19 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/token")
 
 
 async def authenticate_user(cpf: str, password: str, db):
+    """
+    Authenticates a user by checking if the provided CPF and password match an
+    existing account.
+
+    Args:
+        cpf (str): The CPF (Brazilian identification number) of the user.
+        password (str): The password of the user.
+        db: The database connection object.
+
+    Returns:
+        Union[bool, Account]: Returns the account object if the authentication
+         is successful, otherwise returns False.
+    """
     account = await get_account_by_cpf(db, cpf)
     if not account:
         return False
@@ -25,8 +38,22 @@ async def authenticate_user(cpf: str, password: str, db):
 
 
 async def get_current_account(
-    token: Annotated[str, Depends(oauth2_scheme)], db=Depends(get_db)
+    token: Annotated[str, Depends(oauth2_scheme)],
+    db=Depends(get_db)
 ):
+    """
+    Retrieves the current account based on the provided token.
+
+    Args:
+        token (str): The authentication token.
+        db: The database dependency.
+
+    Returns:
+        The current account.
+
+    Raises:
+        HTTPException: If the credentials cannot be validated.
+    """
 
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
@@ -48,7 +75,23 @@ async def get_current_account(
     return account
 
 
-async def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None):
+async def create_access_token(
+    data: dict,
+    expires_delta: Union[timedelta, None] = None
+ ):
+    """
+    Create an access token with the given data and expiration delta.
+
+    Args:
+        data (dict): The data to be encoded in the access token.
+        expires_delta (Union[timedelta, None], optional): The expiration delta
+        for the access token.
+            If not provided, a default expiration of 15 minutes will be used.
+
+    Returns:
+        str: The encoded access token.
+
+    """
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.now(timezone.utc) + expires_delta

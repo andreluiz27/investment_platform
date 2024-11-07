@@ -6,12 +6,19 @@ This is a simple FastAPI project that provides a basic API service. Access to th
 
 ## Tasks checklists
 
-- [x] The exam code should be submitted via a GitHub link.
-- [x] Include a `Makefile` so that when running the command `make api`, it will start the API.
-- [x] The endpoint should accept the currency symbol as a parameter (e.g., BTC). Internally, it should retrieve information from the following URL:
-- [x] The project should have another option for querying a different API of your choice, in case the Mercado Bitcoin URL is unavailable.
-- [x] (Optional) Implement a caching system for currency price queries to reduce the number of external API calls and improve the application's performance.
-- [x] (Optional) Add basic authentication to the API, allowing only authorized users to access the endpoints.
+- [x] Adjust the readme
+  - [ ] Explain how start the server
+  - [ ] Explain how initiate database
+  - [ ] Explain how to test the endpoints
+  - [ ] Put some picture
+- [ ] Create a makefile to initiate database
+- [ ] Clean the code
+- [x] Implement authentication
+- [x] Endpoint to see user account
+- [x] Endpoint to see account's position
+- [ ] AWS hosting
+- [ ] Create a mocked database
+- [ ] (Maybe) Create tests 
 
 ## Requirements
 

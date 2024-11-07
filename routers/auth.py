@@ -1,18 +1,13 @@
-import asyncio
-import datetime
-import httpx
-
-from fastapi import APIRouter
+from schemas import Token
 from database import get_db
 from fastapi import Depends
-from fastapi import HTTPException
-from fastapi.security import OAuth2PasswordRequestForm
-from typing import Annotated
-from schemas import Token, TokenData
-from dependencies import authenticate_user, create_access_token
+from fastapi import APIRouter
 from datetime import timedelta
 from fastapi import HTTPException, status
 from constants import ACCESS_TOKEN_EXPIRE_MINUTES
+from dependencies import authenticate_user, create_access_token
+
+from fastapi.security import OAuth2PasswordRequestForm
 
 
 router = APIRouter(prefix="/auth")
@@ -22,7 +17,21 @@ router = APIRouter(prefix="/auth")
 async def login_for_access_token(
     form: OAuth2PasswordRequestForm = Depends(), db=Depends(get_db)
 ) -> Token:
+    """
+    Authenticates a user and generates an access token.
 
+    Args:
+        form (OAuth2PasswordRequestForm): The form containing the username
+        and password.
+
+        db: The database connection.
+
+    Returns:
+        Token: The generated access token.
+
+    Raises:
+        HTTPException: If the username or password is incorrect.
+    """
     account = await authenticate_user(form.username, form.password, db)
     if not account:
         raise HTTPException(

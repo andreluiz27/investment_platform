@@ -22,6 +22,14 @@ async def get_account(
     session=Depends(get_db),
 ):
     """
-    Show the account details of the current user.
+    Retrieve the current account information.
+
+    Parameters:
+    - current_account: The current account object.
+    - session: The database session.
+
+    Returns:
+    - The current account object.
     """
+
     return current_account

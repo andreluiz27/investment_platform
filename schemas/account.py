@@ -3,14 +3,23 @@ from decimal import Decimal, ROUND_HALF_UP
 
 
 class AccountResponse(BaseModel):
+    """
+    Represents an account response.
+
+    Attributes:
+        acc_code (int): Code of the account.
+        name (str): Name of the account.
+        amount (float): Amount of the account.
+    """
+
     acc_code: int = Field(
-        ..., title="Account Code", description="Code of the account", example=123456
+        ..., title="Account Code", description="Account's code", example=123456
     )
     name: str = Field(
-        ..., title="Name", description="Name of the account", example="John Doe"
+        ..., title="Name", description="Owner's name", example="John Doe"
     )
     amount: float = Field(
-        ..., title="Amount", description="Amount of the account", example=1000.00
+        ..., title="Amount", description="Quantity of stock", example=1000.00
     )
 
     @validator("amount")
