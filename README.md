@@ -7,11 +7,11 @@ This is a simple FastAPI project that provides a basic API service. Access to th
 ## Tasks checklists
 
 - [x] Adjust the readme
-  - [ ] Explain how start the server
-  - [ ] Explain how initiate database
+  - [x] Explain how start the server
+  - [x] Explain how initiate database
   - [ ] Explain how to test the endpoints
   - [x] Put some picture
-- [ ] Create a makefile to initiate database
+- [x] Create a makefile to initiate database
 - [x] Clean the code
 - [x] Implement authentication
 - [x] Endpoint to see user account
@@ -19,6 +19,7 @@ This is a simple FastAPI project that provides a basic API service. Access to th
 - [ ] AWS hosting
 - [x] Create a mocked database
 - [ ] (Maybe) Create tests 
+- [ ] HTTPS certified
 
 ## Requirements
 
@@ -30,18 +31,27 @@ This is a simple FastAPI project that provides a basic API service. Access to th
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/yourusername/your-fastapi-project.git
-    cd your-fastapi-project
-    ```
+    git clone https://github.com/andreluiz27/investment_platform.git
+     ```
 
-2. Run the makefile
+2. Run the makefile to start the api and the databse check before if the ports used in compose are opened, if not, make sure to open or change the ports
 
     ```bash
     make api
     ```
-3. Go to localhost/docs
+3. Run the make command to create the database
 
-4. Click in the padlock icon and put the API KEY that you can find below    
+    ```bash
+    make init-database:
+    ```
+4. Load a mocked database
+    ```bash
+    make load-mocked-db:
+    ```
+
+
+
+
 
 
 ## API Key Authentication

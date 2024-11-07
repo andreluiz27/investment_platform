@@ -3,6 +3,7 @@ version: '3'
 services:
   web:
     build: .
+    container_name: toro_web
     env_file:
       - .env
     command: sh -c "
@@ -17,6 +18,7 @@ services:
 
   mysql:
     image: mysql:5.7
+    container_name: toro_db
     env_file:
       - .env
 

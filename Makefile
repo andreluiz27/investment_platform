@@ -18,9 +18,9 @@ api:
 # Initialize database
 .PHONY: init-database
 init-database:
-	echo 'CREATE DATABASE IF NOT EXISTS toro_test_db' | docker exec -i toro_test_mysql_1 /usr/bin/mysql -u root --password=mypass && $(DOCKER_COMPOSE) up -d --build
+	echo 'CREATE DATABASE IF NOT EXISTS toro_test_db' | docker exec -i toro_db /usr/bin/mysql -u root --password=mypass && $(DOCKER_COMPOSE) up -d --build
 
 # Load mocked database
 .PHONY: load-mocked-db
 load-mocked-db:
-	cat mocked_db.sql | docker exec -i toro_test_mysql_1 /usr/bin/mysql -u root --password=mypass toro_test_db
+	cat mocked_db.sql | docker exec -i toro_db /usr/bin/mysql -u root --password=mypass toro_test_db
