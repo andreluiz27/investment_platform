@@ -1,0 +1,3 @@
+CREATE USER toro_test
+GRANT ALL PRIVILEGES ON *.* TO 'toro_test'@'%' IDENTIFIED BY 'mypass'
+WITH GRANT OPTION;

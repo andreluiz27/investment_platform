@@ -1,0 +1,14 @@
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+*.swm
+
+.env.dev
+.env.prod
+
+# ignoring all files from __pycache__ folder
+__pycache__/
+
+
