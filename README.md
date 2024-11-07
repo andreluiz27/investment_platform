@@ -1,6 +1,6 @@
 # Investments platforms
 
-You can find this API running in an AWS lightsail instance in this address: alzdev.org/docs
+You can find this API running in an AWS lightsail instance in this address: https://alzdev.org/docs
 
 This is a mocked project to simulate a platform for investors. That being said, have those points
 in consideration:
@@ -16,7 +16,7 @@ in consideration:
 
 For this explanation we gonna use the running API in alzdev.org/docs but you can do the same locally. To run locally you have to follow the instructions in this readme file
 
-    1. Go to alzdev.org/docs
+    1. Go to https://alzdev.org/docs
     2. Go in /accounts/my-account section but dont try to execute yet
     3. Click in the padlock symbol and fill ONLY the username and password fields following the next step
     4. The username in that case is the account's CPF number. You can use username = 23456789012 and password = mypass  
