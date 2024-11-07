@@ -19,7 +19,7 @@ services:
     image: mysql:5.7
     env_file:
       - .env
-    # command: --init-file /data/application/init.sql
+
     volumes:
       - mysql_data:/var/lib/mysql
       - ./init.sql:/data/application/init.sql

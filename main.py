@@ -20,6 +20,7 @@ from fastapi_simple_cache.backends.inmemory import InMemoryBackend  # noqa
 
 def init_db():
     from models.account import Account  # noqa
+    from models.position import Position  # noqa
 
     Base.metadata.create_all(bind=engine)
 

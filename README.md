@@ -10,14 +10,14 @@ This is a simple FastAPI project that provides a basic API service. Access to th
   - [ ] Explain how start the server
   - [ ] Explain how initiate database
   - [ ] Explain how to test the endpoints
-  - [ ] Put some picture
+  - [x] Put some picture
 - [ ] Create a makefile to initiate database
 - [x] Clean the code
 - [x] Implement authentication
 - [x] Endpoint to see user account
 - [x] Endpoint to see account's position
 - [ ] AWS hosting
-- [ ] Create a mocked database
+- [x] Create a mocked database
 - [ ] (Maybe) Create tests 
 
 ## Requirements
