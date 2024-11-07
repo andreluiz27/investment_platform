@@ -2,7 +2,7 @@
 
 This is a simple FastAPI project that provides a basic API service. Access to the API requires an API key, which must be passed in the `API_KEY` header.
 
-![ Preview of the API](coin_api.png)
+![ Preview of the API](investor_api.png)
 
 ## Tasks checklists
 
@@ -12,7 +12,7 @@ This is a simple FastAPI project that provides a basic API service. Access to th
   - [ ] Explain how to test the endpoints
   - [ ] Put some picture
 - [ ] Create a makefile to initiate database
-- [ ] Clean the code
+- [x] Clean the code
 - [x] Implement authentication
 - [x] Endpoint to see user account
 - [x] Endpoint to see account's position
