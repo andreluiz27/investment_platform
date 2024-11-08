@@ -21,7 +21,7 @@ For this explanation we gonna use the running API in alzdev.org/docs but you can
     3. Click in the padlock symbol and fill ONLY the username and password fields following the next step
     4. The username in that case is the account's CPF number. You can use username = 23456789012 and password = mypass  
     5. Now you can execute this endpoint, if things go well you will be able to see the account's info
-    6. If you logged you can go straight to /positions/my-position and check the positions associated with the account. If any problem related to authentication happens try to login again and be aware that the jwt token has expiration
+    6. If you are logged, you can go straight to /positions/my-position and check the positions associated with the account. If any problem related to authentication happens try to login again and be aware that the jwt token has expiration
     
 
 ![ Preview of the API](investor_api.png)
