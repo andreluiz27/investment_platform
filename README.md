@@ -1,4 +1,4 @@
-# Investments platform
+# Investment platform
 
 You can find this API running in an AWS lightsail instance in this address: https://alzdev.org/docs
 
