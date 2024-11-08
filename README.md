@@ -43,7 +43,7 @@ For this explanation we gonna use the running API in alzdev.org/docs but you can
 - [ ] (Maybe) Create tests 
 - [x] HTTPS certified
 - [ ] CPF as unique -> OUT OF THE DEADLINE
-- [ ] Create an cache -> OUT OF THE DEADLINE
+- [ ] Create a cache -> OUT OF THE DEADLINE
 
 ## Requirements
 
