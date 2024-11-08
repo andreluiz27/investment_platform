@@ -65,11 +65,11 @@ For this explanation we gonna use the running API in alzdev.org/docs but you can
 3. Run the make command to create the database
 
     ```bash
-    make init-database:
+    make init-database
     ```
 4. Load a mocked database
     ```bash
-    make load-mocked-db:
+    make load-mocked-db
     ```
 5. Go to localhost:8000/docs and check if things are running well
 
