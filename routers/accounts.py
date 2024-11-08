@@ -3,6 +3,7 @@ from models.account import Account
 from database import get_db
 from fastapi import Depends
 from typing import Annotated
+from schemas.account import AccountResponse
 from dependencies import get_current_account
 
 router = APIRouter(prefix="/accounts")
@@ -32,4 +33,5 @@ async def get_account(
     - The current account object.
     """
 
-    return current_account
+    account_response = AccountResponse.from_orm(current_account)
+    return account_response

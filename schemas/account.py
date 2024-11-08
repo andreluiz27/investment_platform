@@ -15,12 +15,27 @@ class AccountResponse(BaseModel):
     acc_code: int = Field(
         ..., title="Account Code", description="Account's code", example=123456
     )
-    name: str = Field(
-        ..., title="Name", description="Owner's name", example="John Doe"
-    )
+    name: str = Field(..., title="Name", description="Owner's name", example="John Doe")
     amount: float = Field(
         ..., title="Amount", description="Quantity of stock", example=1000.00
     )
+
+    @classmethod
+    def from_orm(cls, account):
+        """
+        Converts an ORM account object to a Pydantic AccountResponse object.
+
+        Parameters:
+        - account: The ORM account object.
+
+        Returns:
+        - The Pydantic AccountResponse object.
+        """
+        return cls(
+            acc_code=account.acc_code,
+            name=account.name,
+            amount=float(account.amount),
+        )
 
     @validator("amount")
     def ensure_two_decimal_places(cls, v):
